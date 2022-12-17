@@ -20,6 +20,10 @@ font-family: 'Roboto', sans-serif; */
     --cornflower: #e7e9fc;
     --light-slate: #8e8f99;
     --green: #31d0aa;
+    
+    --transition-time: 250ms;
+    --cub-bez: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-type: var(--transition-time) var(--cub-bez);
 }
 
 body {
@@ -110,12 +114,22 @@ img {
     letter-spacing: 0.03em;
     color: var(--navy-blue);
     line-height: 1.33;
+    
+    transition: color var(--transition-type);
+    
+/*
+    transition-property: color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--cub-bez);
+*/
 }
 
 .logo,
 .site-nav .link {
     color: var(--navy-blue);
     text-decoration: none;
+    
+    transition: color var(--transition-type);
 }
 
 .logo,
@@ -152,6 +166,8 @@ img {
 
     font-weight: inherit;
     letter-spacing: 0.02em;
+    
+    transition: color var(--transition-type);
 }
 
 .contacts .link:hover,
@@ -184,6 +200,8 @@ img {
     line-height: 1.17;
     display: inline-block;
     margin-bottom: 16px;
+    
+    transition: color var(--transition-type);
 }
 
 .footer .logo:hover,
@@ -219,6 +237,8 @@ img {
 
 .footer .social-link {
     background-color: rgba(255, 255, 255, 0.1);
+    
+    transition: background-color var(--transition-type);
 }
 
 .social-icon {
@@ -271,6 +291,8 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 48px;
+    
+    transition: box-shadow var(--transition-type);
 }
 
 .hero {
@@ -441,6 +463,8 @@ img {
     height: 40px;
     background-color: var(--iris);
     border-radius: 50%;
+    
+    transition: background-color var(--transition-type);
 }
 
 /* customers */
@@ -479,6 +503,8 @@ img {
 
     border: 1px solid var(--light-slate);
     border-radius: 4px;
+    
+    transition: fill var(--transition-type), border-color var(--transition-type);
 }
 
 .customers-icon {
@@ -498,13 +524,15 @@ img {
 
 .portfolio-button {
     color: var(--iris);
-    background: var(--cloud);
+    background-color: var(--cloud);
     font-weight: 600;
     letter-spacing: 0.04em;
     line-height: 1.5;
     border: 1px solid var(--cornflower);
     border-radius: 4px;
     padding: 12px 24px;
+    
+    transition: color var(--transition-type), background-color var(--transition-type), box-shadow var(--transition-type);
 }
 
 .portfolio-button:hover,
@@ -569,6 +597,10 @@ img {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 
     border-radius: 0px 0px 4px 4px;
+}
+
+.portfolio-list .item{
+    transition: box-shadow var(--transition-type);
 }
 
 .portfolio-list .item:hover {
