@@ -655,3 +655,14 @@ img {
     border-radius: 2px;
     background-color: var(--iris);
 }
+
+/* overlay */
+
+.overlay{
+
+}
+
+.overlay-text{
+    line-height: 1.5;
+    color: var(--cloud);
+}
