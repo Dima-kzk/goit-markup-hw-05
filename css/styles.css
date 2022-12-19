@@ -20,7 +20,9 @@ font-family: 'Roboto', sans-serif; */
     --cornflower: #e7e9fc;
     --light-slate: #8e8f99;
     --green: #31d0aa;
-    
+
+    --modal-color: #fcfcfc;
+
     --transition-time: 250ms;
     --cub-bez: cubic-bezier(0.4, 0, 0.2, 1);
     --transition-type: var(--transition-time) var(--cub-bez);
@@ -114,10 +116,10 @@ img {
     letter-spacing: 0.03em;
     color: var(--navy-blue);
     line-height: 1.33;
-    
+
     transition: color var(--transition-type);
-    
-/*
+
+    /*
     transition-property: color;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--cub-bez);
@@ -128,7 +130,7 @@ img {
 .site-nav .link {
     color: var(--navy-blue);
     text-decoration: none;
-    
+
     transition: color var(--transition-type);
 }
 
@@ -166,7 +168,7 @@ img {
 
     font-weight: inherit;
     letter-spacing: 0.02em;
-    
+
     transition: color var(--transition-type);
 }
 
@@ -200,7 +202,7 @@ img {
     line-height: 1.17;
     display: inline-block;
     margin-bottom: 16px;
-    
+
     transition: color var(--transition-type);
 }
 
@@ -237,7 +239,7 @@ img {
 
 .footer .social-link {
     background-color: rgba(255, 255, 255, 0.1);
-    
+
     transition: background-color var(--transition-type);
 }
 
@@ -291,7 +293,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 48px;
-    
+
     transition: box-shadow var(--transition-type);
 }
 
@@ -463,7 +465,7 @@ img {
     height: 40px;
     background-color: var(--iris);
     border-radius: 50%;
-    
+
     transition: background-color var(--transition-type);
 }
 
@@ -503,7 +505,7 @@ img {
 
     border: 1px solid var(--light-slate);
     border-radius: 4px;
-    
+
     transition: fill var(--transition-type), border-color var(--transition-type);
 }
 
@@ -531,7 +533,7 @@ img {
     border: 1px solid var(--cornflower);
     border-radius: 4px;
     padding: 12px 24px;
-    
+
     transition: color var(--transition-type), background-color var(--transition-type), box-shadow var(--transition-type);
 }
 
@@ -594,12 +596,13 @@ img {
     border-bottom: 0.5px solid var(--cloud);
     border-left: 0.5px solid var(--cloud);
 
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 
     border-radius: 0px 0px 4px 4px;
 }
 
-.portfolio-list .item{    
+.portfolio-list .item {
     transition: box-shadow var(--transition-type);
 }
 
@@ -609,43 +612,62 @@ img {
     border-radius: 0px 0px 4px 4px;
 }
 
-
 /* modal window */
 
-.backdrop{
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
-    
+
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 0, 0.5);
+    background-color: rgba(46, 47, 66, 0.4);
 }
 
-.backdrop.is-hidden{
+.backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-.modal{
-    min-height: 400px;
-    min-width: 600px;
-    background-color: white;
+.modal {
+    min-width: 408px;
+    min-height: 576px;
+    background-color: var(--modal-color);
     padding: 15px;
-    
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.close-btn{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cornflower);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
 /* current-page */
 
-.current-page{
+.current-page {
     position: relative;
 }
 
-.current-page::after{
+.current-page::after {
     position: absolute;
     bottom: 0;
     content: "";
@@ -656,25 +678,22 @@ img {
     background-color: var(--iris);
 }
 
-
 /* image-wrapper */
 
-.image-wrapper{
+.image-wrapper {
     position: relative;
     overflow: hidden;
 }
 
-.cover-text{
+.cover-text {
     color: var(--cloud);
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
 
-
-
-.cover{
+.cover {
     position: absolute;
-    
+
     top: 0;
     left: 0;
     width: 100%;
@@ -685,8 +704,7 @@ img {
     transition: transform var(--transition-type);
 }
 
-.portfolio-list .item:hover .cover{
+.portfolio-list .item:hover .cover {
     transform: translateY(0);
     opacity: 1;
 }
-
